@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Pigeon Detection AI</title>
+</head>
+<body>
+    <h1>Pigeon Detection AI</h1>
+    <h3>created by Shunsuke Nara</h3>
+    {% if not img_result %}
+        {% if error_flag %}
+            <p style="color: red;">画像ファイルを入力してください</p>
+        {% endif %}
+        <form action="/index" enctype="multipart/form-data" method="POST">
+            <input type="file" name="result" accept="image/*" capture="environment" onchange="previewImage(this);" style="width:400px;" size="50">
+            <img id="preview" width="100%" height="30%">
+
+            <br>
+            <button class="button" type="submit" button-size="large">ハトを探す🐦</button>
+        </form>
+    {% endif %}
+
+    {% if img_result %}
+        <div>
+            <img src="/static/media/result.jpg" width="100%" height="30%">
+            <p>すべてのハトはどこかにいなければならない</p>
+        </div>
+
+        <br><br><br>
+        <a href="./">別の画像で試してみる</a>
+        <br>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="青山祭2022でハト検知AIWebアプリを試しています🐦" data-url="https://pigeon-detaction.herokuapp.com" data-hashtags="青山祭2022" data-size="large" data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div id="fb-root"></div>
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fpigeon-detaction.herokuapp.com&layout=button_count&size=large&width=117&height=28&appId" width="117" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    {% endif %}
+</body>
+</html>
