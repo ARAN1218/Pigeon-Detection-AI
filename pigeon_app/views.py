@@ -1,23 +1,25 @@
-#Flaskとrender_template（HTMLを表示させるための関数）をインポート
+# 各種インポート
 from flask import Flask,render_template,request
 import subprocess
 import os
 
-#Flaskオブジェクトの生成
+# Flaskオブジェクトの生成
 app = Flask(__name__)
 
-# 画像のアップロード先のディレクトリ
+# 画像のアップロードのための設定
 UPLOAD_FOLDER = 'pigeon_app/static/media'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 
 
+# ホーム
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template("index.html")
 
 
+# 推論処理
 @app.route("/index",methods=["post"])
 def post():
     img_result = request.files['result']
