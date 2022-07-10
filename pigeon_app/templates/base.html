@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="Pigeon Detection AI" />
+    <meta property="og:description" content="画像からハトを探します🐦" />
+    <meta property="og:image" content="https://pigeon-detection.herokuapp.com/static/media/result.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Pigeon Detection AI</title>
+</head>
+<body>
+    <h1><a href="/" style="text-decoration: none; color: black;">Pigeon Detection AI</a></h1>
+    <h3>created by Shunsuke Nara</h3>
+    <nav>
+        <ul>
+            <li><a class="nav" href="/">HOME</a></li>
+            <li><a class="nav" href="/info">INFO</a></li>
+            <li><a class="nav" href="/pigeons">PIGEONS</a></li>
+            <li><a class="nav" href="/tech">TECH</a></li>
+        </ul>
+    </nav>
+    <br>
+    {% block main %}
+    {% endblock %}
+</body>
+</html>

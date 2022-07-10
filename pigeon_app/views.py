@@ -30,5 +30,19 @@ def post():
     return render_template("index.html", img_result=True)
 
 
+@app.route("/info")
+def info():
+    return render_template("info.html")
+
+
+@app.route("/pigeons")
+def pigeons():
+    return render_template("pigeons.html")
+
+
+@app.route("/tech")
+def tech():
+    return render_template("tech.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

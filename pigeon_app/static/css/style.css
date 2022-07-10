@@ -12,3 +12,44 @@
 #preview { 
     max-height: 40%;
 }
+
+nav{
+    height: 100%;
+    padding-top: 0.1%;
+    overflow: hidden;
+    background-color: dimgray;
+    box-sizing: border-box;
+}
+
+ul{
+    display: flex;
+}
+
+
+li{
+    float: left;
+    list-style: none;
+    text-align: center;
+    width: 25%;
+}
+li a{
+    display: block;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+li+ li{
+    border-left: 1px solid black;
+}
+li:last-child {
+    margin-right: 40px;
+}
+
+.nav{
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+.nav:hover{
+    color: rgb(214, 237, 248);
+}
+
