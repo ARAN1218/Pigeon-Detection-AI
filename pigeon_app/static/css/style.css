@@ -1,3 +1,9 @@
+body {
+  position: relative;
+  background: url("../pigeon_detection_background.JPG") no-repeat;
+  background-size: cover;
+}
+
 #loading {
     width: 100vw;
     height: 100vh;
