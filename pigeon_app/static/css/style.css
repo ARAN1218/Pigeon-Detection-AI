@@ -1,7 +1,9 @@
 body {
   position: relative;
-  background: url("../pigeon_detection_background.JPG") no-repeat;
+  background: url("pigeon_detection_background.JPG") no-repeat;
+  min-height: 100vh;
   background-size: cover;
+  background-position: center;
 }
 
 #loading {
@@ -70,6 +72,8 @@ nav{
 
 ul{
     display: flex;
+    padding-left: 0%;
+    padding-right: 0%;
 }
 
 
@@ -87,9 +91,9 @@ li a{
 li+ li{
     border-left: 1px solid black;
 }
-li:last-child {
-    margin-right: 40px;
-}
+/* li:last-child {
+    margin-right: 0.1%;
+} */
 
 .nav{
     display: block;

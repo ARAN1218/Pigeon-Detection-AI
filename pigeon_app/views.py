@@ -31,7 +31,6 @@ def post():
     subprocess.run(['python', 'pigeon_app/yolov5/detect.py', '--source', 'pigeon_app/static/media/result.jpg', '--weights', 'pigeon_app/yolov5/pigeon_5.pt', '--conf', '0.3', '--name', '../../../static/media', '--exist-ok'])
     img_result_share = Image.open(os.path.join(app.config['UPLOAD_FOLDER'], 'result.jpg'))
     img_result_share = img_result_share.resize((1200,630))
-    img_result_share.save(os.path.join(app.config['UPLOAD_FOLDER'], 'result_share.jpg'))
     return render_template("index.html", img_result=True)
 
 
