@@ -102,29 +102,47 @@ li.menu+ li.menu{
 }
 
 
-/* pigeonsの画像・テキスト配置 */
-h3.pigeons {
-  font-size: 1.5em;
-  writing-mode: vertical-lr;
+/* pigeonsの画像・テキスト配置(PC用) */
+@media screen and (min-width: 500px) {
+  h3.pigeons {
+    font-size: 1.5em;
+    writing-mode: vertical-lr;
+  }
+
+  img.pigeons {
+    width: 50%;
+    height: 100%;
+  }
+
+  ul.pigeons {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ul.pigeons li.pigeons {
+    display:flex;
+    margin-top:20px;
+  }
+
+  ul.pigeons li.pigeons:nth-child(even){
+    flex-direction: row-reverse;
+  }
 }
 
-img.pigeons {
-  width: 50%;
-  height: 100%;
-}
 
-ul.pigeons {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul.pigeons li.pigeons {
-  width: 100%;
-  height: 100%;
-  display:flex;
-  margin-top:20px;
-}
-
-ul.pigeons li.pigeons:nth-child(even){
-  flex-direction: row-reverse;
+/* pigeonsの画像・テキスト配置(スマホ用) */
+@media screen and (max-width: 500px) {
+  h3.pigeons {
+    font-size: 1.5em;
+  }
+  
+  img.pigeons {
+    width: 100%;
+    height: 100%;
+  }
+  
+  ul.pigeons {
+    list-style: none;
+    padding-left: 0;
+  }
 }
