@@ -3,6 +3,19 @@
 {% block main %}
     <p>このページでは本Webアプリにて使用されている人工知能を作る技術や、アプリ化に際して使用した技術について適当に紹介します。</p>
     <div class="accordion__container">
+        <div class="accordion__tab">herokuの無料サーバーサービス終了について</div>
+        <div class="accordion__content">
+            <p>
+                僕ね、このアプリ初公開のときに、herokuさま、あの、あれなんすよ、あのー、（本アプリの）ホストサーバーにしていたんですよ。
+            </p>
+            <p>
+                マジでショックです！
+            </p>
+            <p>
+                まぁでも代替サービスあるなら……OKです！（微笑み、力強く親指を立てる）
+            </p>
+            <img src="../static/media/goodbye_heroku.jpeg" alt="でもAzure App Serviseならokです">
+        </div>
         <div class="accordion__tab" id="ogp">SNS共有ボタンで画像が共有できない理由について</div>
         <div class="accordion__content">
             <p>
@@ -51,7 +64,8 @@
             <p>4. 一旦herokuを使ってインターネット上に公開し、動作するか確かめる。</p>
             <p>5. Webアプリのバックエンド(YOLOv5の予測処理等)をPythonで実装する。(←マジで一番キツかった。二度とやりたくない。)</p>
             <p>6. 細かいところをHTML/CSS/JavaScriptで装飾していく。</p>
-            <p>7. 人類を救う🐦</p>
+            <p>7. herokuの無料サーバーサービスが無くなってしまうので、泣く泣くAzure App Serviceに乗り換える。</p>
+            <p>810. 人類を救う🐦</p>
         </div>
     </div>
 {% endblock %}

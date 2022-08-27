@@ -1,6 +1,6 @@
 body {
   position: relative;
-  background: url("pigeon_detection_background.JPG") no-repeat;
+  background: url("../media/pigeon_detection_background.JPG") no-repeat;
   min-height: 100vh;
   background-size: cover;
   background-position: center;

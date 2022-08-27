@@ -3,7 +3,9 @@
 {% block main %}
     {% if not img_result %}
         {% if error_flag %}
-            <p style="color: red;">画像ファイルを入力してください</p>
+            <p style="color: red;"><font size="5">画像ファイルを入力してください</font></p>
+            <p style="color: red;">制限サイズ：5MB</p>
+            <p style="color: red;">使用可能拡張子：.jpg, .jpeg, .png, .bmp, .tif, .tiff, .dng, .webp, .mpo</p>
         {% endif %}
         <form action="/index" enctype="multipart/form-data" method="POST">
             <input type="file" name="result" accept="image/*" onchange="previewImage(this);" style="width:400px;" size="50">
@@ -16,7 +18,7 @@
 
     {% if img_result %}
         <div>
-            <img src="/static/media/result.jpg" width="100%" height="30%">
+            <img src="/static/media/result{{ suffix }}" width="100%" height="30%">
             <p>すべてのハトはどこかにいなければならない</p>
         </div>
 
