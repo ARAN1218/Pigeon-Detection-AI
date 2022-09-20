@@ -46,5 +46,9 @@ def pigeons():
 def tech():
     return render_template("tech.html")
 
+@app.route("/sitemap.xml")
+def sitemap():
+    return app.send_static_file("sitemap.xml")
+
 if __name__ == "__main__":
     app.run(debug=True)
