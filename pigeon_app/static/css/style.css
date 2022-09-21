@@ -82,8 +82,8 @@ body {
   display: block;
 }
 
-
-.button{
+/* 読み込みボタン */
+.button {
     width: 20%;
     min-width: 200px;
     max-width: 600px;
@@ -92,6 +92,14 @@ body {
     border: 1px solid #68779a;
     background: #cbe8fa;
     cursor: pointer;
+}
+.button.onclick {
+  background: #ff7a7a;
+  font-size: 0;
+}
+.button.onclick:before {
+  font-size: 12px;
+  content: "読み込み中です...🐦";
 }
 
 #preview { 

@@ -16,6 +16,11 @@ window.onload = function() {
 	spinner.classList.add('loaded');
 }
 
+// 読み込み画面(ボタン)
+function onClick(){
+	document.getElementsByClassName("button")[0].classList.add("onclick");
+	document.getElementsByClassName("button")[1].classList.add("onclick");
+}
 
 // アコーディオンメニュー
 const tabs = document.querySelectorAll(".accordion__tab");
