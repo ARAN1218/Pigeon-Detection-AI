@@ -24,7 +24,7 @@ def index():
 @app.route("/index",methods=["post"])
 def post():
     img_result = request.files['result']
-    suffix = "." + img_result.filename.split(".")[1]
+    suffix = "." + img_result.filename.split(".")[1] if "." in img_result.filename else ""
     if img_result.filename == '' or suffix.lower() not in ALLOWED_TYPES:
         return render_template("index.html", img_result=False, error_flag=True)
     img_result.save(os.path.join(app.config['UPLOAD_FOLDER'], 'result'+suffix))

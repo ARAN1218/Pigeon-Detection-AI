@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
 {% block main %}
+    <h2>HOME</h2>
     {% if not img_result %}
         {% if error_flag %}
             <p style="color: red;"><font size="5">画像ファイルを入力してください</font></p>
             <p style="color: red;">制限サイズ：5MB</p>
             <p style="color: red;">使用可能拡張子：.jpg, .jpeg, .png, .bmp, .tif, .tiff, .dng, .webp, .mpo</p>
+        {% else %}
+            <p><font size="5">画像ファイルを入力してください🐦</font></p>
+            <p>制限サイズ：5MB</p>
+            <p>使用可能拡張子：.jpg, .jpeg, .png, .bmp, .tif, .tiff, .dng, .webp, .mpo</p>
         {% endif %}
         <form action="/index" enctype="multipart/form-data" method="POST">
             <input type="file" name="result" accept="image/*" onchange="previewImage(this);">
