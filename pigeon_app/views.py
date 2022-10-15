@@ -9,12 +9,12 @@ app = Flask(__name__)
 
 # 画像のアップロードのための設定
 ALLOWED_TYPES = ['.jpg', '.jpeg', '.png', '.bmp', '.tif', '.tiff', '.dng', '.webp', '.mpo']
-app.config['UPLOAD_FOLDER'] = '../pigeon_app/static/media'
+app.config['UPLOAD_FOLDER'] = 'pigeon_app/static/media'
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 
 
 # ホーム
-@app.route("/")
+@app.route("/", methods=['GET'])
 @app.route("/home", methods=['GET', 'POST'])
 def home():
     if request.method == 'GET':
@@ -25,7 +25,7 @@ def home():
         if img_result.filename == '' or suffix.lower() not in ALLOWED_TYPES:
             return render_template("home.html", img_result=False, error_flag=True)
         img_result.save(os.path.join(app.config['UPLOAD_FOLDER'], 'result'+suffix))
-        subprocess.run(['python3', '../pigeon_app/yolov5/detect.py', '--source', '../pigeon_app/static/media/result.jpeg', '--weights', '../pigeon_app/yolov5/pigeon_5.pt', '--conf', '0.3', '--name', '../../../static/media', '--exist-ok'])
+        subprocess.run(['python', 'pigeon_app/yolov5/detect.py', '--source', 'pigeon_app/static/media/result'+suffix, '--weights', 'pigeon_app/yolov5/pigeon_5.pt', '--conf', '0.3', '--name', '../../../static/media', '--exist-ok'])
         return render_template("home.html", img_result=True, suffix=suffix)
 
 
