@@ -12,7 +12,7 @@
             <p>制限サイズ：5MB</p>
             <p>使用可能拡張子：.jpg, .jpeg, .png, .bmp, .tif, .tiff, .dng, .webp, .mpo</p>
         {% endif %}
-        <form action="/index" enctype="multipart/form-data" method="POST">
+        <form action="/home" enctype="multipart/form-data" method="POST">
             <input type="file" name="result" accept="image/*" onchange="previewImage(this);">
             <img id="preview" width="100%" height="30%">
 
@@ -35,7 +35,7 @@
         <p style="background: rgba(255, 255, 255, 0.4);">以下の各種ボタンから結果を共有してくれると嬉しいです(共有する際、上の画像を手動で保存・貼り付けしてください...)<br>(何でそんな仕様になっているのかについては<a href="./tech#ogp">こちら</a>)</p>
 
         
-        <!-- <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://pigeon-detection.azurewebsites.net" data-color="default" data-size="large" data-count="true" data-ver="3" style="display: none;"></div>
+        <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://pigeon-detection.azurewebsites.net" data-color="default" data-size="large" data-count="true" data-ver="3" style="display: none;"></div>
         <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
 
         <br>
@@ -49,7 +49,7 @@
 
         <br>
         <div id="fb-root"></div>
-        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fpigeon-detection.azurewebsites.net&layout=button_count&size=large&width=117&height=28&appId" width="117" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fpigeon-detection.azurewebsites.net&layout=button_count&size=large&width=117&height=28&appId" width="117" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
         <br>
         <form action="./"><button class="button" button-size="large" onclick="onClick()">別の画像で試してみる🐦</button></form>
